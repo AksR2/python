@@ -1,0 +1,9 @@
+DEBUG:root:This message should go to the log file
+INFO:root:This too
+WARNING:root:This as well
+2014-02-18 13:47:56,493:This message should go to the log file
+2014-02-18 13:47:56,493:This too
+2014-02-18 13:47:56,493:This as well
+2014-02-18 13:50:35,335:DEBUG:This message should go to the log file
+2014-02-18 13:50:35,335:INFO:This too
+2014-02-18 13:50:35,335:WARNING:This as well
