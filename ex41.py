@@ -9,13 +9,13 @@ PHRASES={
 	"class %%%(%%%):":
 		"Make a class name %%% that is-a %%%.",
 	"class %%%(object):\n\tdef _init_(self,***)" :
-		"class %%% has-a _init_ that takes self and ***parameters.",
+		"class %%% has-a _init_ that takes self and *** parameters.",
 	"class %%%(object):\n\tdef ***(self,@@@)":
-		"class %%% has-a funtion named *** that takes self and @@@ parameters.",
+		"class %%% has-a function named *** that takes self and @@@ parameters.",
 	"***=%%%()":
 		"Set *** to an instance of class %%%.",
 	"***.***(@@@)":
-		"From *** get the function, and call it with parameters self,@@@.",
+		"From *** get the *** function, and call it with parameters self,@@@.",
 	"***.***='***'":
 		"From *** get the *** attribute and set it to '***'."
 	}
@@ -31,7 +31,7 @@ for word in urlopen(WORD_URL).readlines():
 
 def convert(snippet,phrase):
 	class_names=[w.capitalize() for w in random.sample(WORDS,snippet.count("%%%"))]
-	other_names=random.sample(WORDS,snippet.count("%%%%"))
+	other_names=random.sample(WORDS,snippet.count("***"))
 	results=[]
 	param_names=[]
 	
@@ -43,11 +43,11 @@ def convert(snippet,phrase):
 		result=sentence[:]
 		
 		#fake class names
-		for word in other_names:
+		for word in class_names:
 			result=result.replace("%%%",word,1)
 			
 		#fake other names
-		for word in class_names:
+		for word in other_names:
 			result=result.replace("***",word,1)
 		#fake paramter lists
 		
